@@ -1,0 +1,12 @@
+<h1>Make a new account</h1>
+
+<%= form_for @user do |user| %>
+
+	Username: <%= user.text_field :username %></br>
+	Password: <%= user.text_field :password %></br>
+
+	<%= user.submit "Creat account!" %>
+
+<% end %>
+
+<%= link_to "Go Back", users_path %>

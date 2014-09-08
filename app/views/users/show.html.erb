@@ -1,0 +1,14 @@
+<h1><%= @user.username %></h1>
+
+<%= link_to "Add new movie", :add_movie%>
+
+<ul>
+	<% @user.movies.all.each do |movie| %>
+
+	<li>Movie Title: <%= movie.title %></li></br>
+	<li>Director: <%= movie.director %></li></br></br>
+
+	<% end %>
+</ul>
+
+<%= link_to "Go back", :view_all %>
