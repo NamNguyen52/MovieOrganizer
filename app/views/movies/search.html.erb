@@ -1,0 +1,10 @@
+<h1>Search for a movie trailer</h1>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search by movie title, director, actor or actress:") %></br></br>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+
+<% end %></br></br>
+
+<%= link_to "Go back", :show_user %>

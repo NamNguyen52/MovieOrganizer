@@ -1,5 +1,5 @@
-<h1>Welcome</h1>
+<% @users.each do |user| %>
 
-<%= link_to "Make new account", :new_user %></br>
-<%= link_to "Login", :login %></br></br></br></br>
-<%= link_to "view all users", :view_all%>
+<%= user.username %></br>
+
+<% end %></br></br>

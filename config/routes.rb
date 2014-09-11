@@ -1,68 +1,24 @@
 Movieorganizer::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # manually add a new movie
+  get 'movies/:user_id/new' => 'movies#new', as: :add_movie
+  post 'movies/' => 'movies#create'
+  get 'moviesindex/' => 'movies#index'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #search with YouTube API to add new movie
+  get 'users/login/:user_id/search' => 'movies#search', as: :search_movie
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # This is more or less the bare min of the first screen of the app.
+  # This shows the Login, and create new account.
+  get 'users/' => 'users#home'
+  get 'users/index' => 'users#index'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-
-  post 'users/:id' => 'movies#create_movie'
-  get 'users/all/:id/new_movie' => 'movies#new_movie', as: :add_movie
-
-  get 'users/' => 'users#index'
+  # New/Create pairs
   get 'users/new' => 'users#new', as: :new_user
   post 'users/' => 'users#create'
+
+  # Wireframe of user login
   get 'users/login' => 'users#login', as: :login
-  get 'users/all' => 'users#all', as: :view_all
-  get 'users/all/:id' => 'users#show', as: :show_user
+  get 'users/login/:user_id' => 'users#show', as: :show_user
 
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

@@ -1,3 +1,9 @@
 <h1>Please Login</h1>
 
+<% @users.each do |user| %>
+
+<%= user.username %><%= link_to "Show More", show_user_path(user) %></br>
+
+<% end %></br></br>
+
 <%= link_to "Go back", users_path %> 

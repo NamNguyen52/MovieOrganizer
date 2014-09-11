@@ -1,0 +1,19 @@
+<h1>Add a new movie</h1>
+
+<%= form_for @movie do |movie| %>
+
+<div class="form-group">
+<%= movie.label :title %> </br> <%= movie.text_field :title %>
+</div>
+<div class="form-group">
+<%= movie.label :director %> </br> <%= movie.text_field :director %>
+</div>
+<div class="form-group">
+<%= movie.label :release_date %> </br> <%= movie.text_field :release_date %>
+</div></br></br>
+
+<%= movie.label :submit %> <%= movie.submit "Add movie!" %>
+
+<% end %>
+
+<%= link_to "Go back", login_path %>

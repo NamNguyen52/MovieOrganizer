@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
-  def index
+  def home
   end
 
-  def all
-  	@users = User.all
+  def index
+    @users = User.all
   end
 
   def show
-  	@user = User.find(params[:id])
+  	@user = User.find(params[:user_id])
   end
 
   def new
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def login
-  
+    @users = User.all
   end
 
 end
