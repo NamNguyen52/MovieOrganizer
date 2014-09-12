@@ -1,4 +1,9 @@
 <h1>Welcome</h1>
 
+<% if logged_in? %>
+<p>Welcome <%= current_user.name %> to MovieApp</p>
+<% end %>
+
 <%= link_to "Make new account", :new_user %></br></br>
-<%= link_to "Login", :login %></br></br>
+<%= link_to "Log in", :log_in %></br></br>
+<%= link_to "Log out", log_out_path, method: :delete %>

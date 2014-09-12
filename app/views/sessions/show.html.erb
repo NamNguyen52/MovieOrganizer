@@ -1,0 +1,6 @@
+<h1><%= current_user.username %></h1>
+
+<%= link_to "Add new movie", :add_movie%></br>
+<%= link_to "Search for a movie", :search_movie %></br>
+<%= link_to "Go back", home_path %></br>
+<%= link_to "Log out", log_out_path, method: :delete%>

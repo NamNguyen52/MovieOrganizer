@@ -12,11 +12,13 @@ Movie.destroy_all
 users = User.create([
   {
   	username: "FirstUser",
-  	password: "FirstUserPassword"
+  	password: "FirstUserPassword",
+    name: "Nam"
   },
   {
   	username: "SecondUser",
-  	password: "SecondUserPassword"
+  	password: "SecondUserPassword",
+    name: "Bryan"
   }
 
 ]);

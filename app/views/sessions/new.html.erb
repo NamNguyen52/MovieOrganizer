@@ -1,0 +1,15 @@
+<h1>Please enter your login information</h1>
+
+<%= flash[:error] %>
+
+
+<%= form_for(:session, url: log_in_path) do |login| %>
+
+<%= login.label :username %></br> <%= login.text_field :username %></br>
+<%= login.label :password %></br> <%= login.text_field :password %></br></br>
+
+<%= login.submit "Login!" %></br></br>
+
+<% end %>
+
+<%= link_to "Go Back", home_path %>

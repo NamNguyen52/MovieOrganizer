@@ -7,18 +7,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-  	@user = User.find(params[:user_id])
-  end
-
   def new
   	@user = User.new
   end
 
   def create
-  	@user = User.create(params.require(:user).permit(:username, :password))
+  	@user = User.create(params.require(:user).permit(:name, :username, :password))
   	if @user.save
-  		redirect_to users_path
+  		redirect_to show_user_path
   	else
   		render 'new'
   	end
