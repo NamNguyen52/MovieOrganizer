@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
 		flash.clear
 	end
 
+	def show
+		@current_user_list = current_user.usermovies
+	end	
+
 	def create
 		flash.clear
 

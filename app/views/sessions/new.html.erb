@@ -5,8 +5,8 @@
 
 <%= form_for(:session, url: log_in_path) do |login| %>
 
-<%= login.label :username %></br> <%= login.text_field :username %></br>
-<%= login.label :password %></br> <%= login.text_field :password %></br></br>
+<%= login.label :username %></br><%= login.text_field :username %></br>
+<%= login.label :password %></br><%= login.password_field :password %></br></br>
 
 <%= login.submit "Login!" %></br></br>
 

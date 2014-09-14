@@ -3,7 +3,7 @@ Movieorganizer::Application.routes.draw do
   # manually add a new movie
   get '/current_user/new_movie' => 'movies#new', as: :add_movie
   post 'movies/' => 'movies#create'
-  get 'moviesindex/' => 'movies#index'
+  get 'movies/' => 'movies#index'
 
   #search with YouTube API to add new movie
   get '/current_user/search' => 'movies#search', as: :search_movie

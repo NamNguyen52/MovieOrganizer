@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.create(params.require(:user).permit(:name, :username, :password))
   	if @user.save
+      log_in(@user)
   		redirect_to show_user_path
   	else
   		render 'new'
