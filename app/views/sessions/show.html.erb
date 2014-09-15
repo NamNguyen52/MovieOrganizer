@@ -1,7 +1,14 @@
-<h1><%= current_user.username %></h1>
+<h1><%= current_user.username %></h1></br>
+
+<%= link_to "Add new movie", :add_movie%></br>
+<%= link_to "Search for a movie", :search_movie %></br>
+<%= link_to "The Reel", movies_path %></br>
+<%= link_to "Log out", log_out_path, method: :delete%></br></br>
 
 <% @current_user_list.each do |entry| %>
 
+<%= link_to "Watched it!", watched_movie_path(@movie), method: :patch %></br>
+<%= link_to "delete" %></br>
 Title: <%= entry.movie.title %></br> 
 Director: <%= entry.movie.director %></br>
 Release Date: <%= entry.movie.release_date %></br>
@@ -14,5 +21,5 @@ Trailer:</br>
 
 <%= link_to "Add new movie", :add_movie%></br>
 <%= link_to "Search for a movie", :search_movie %></br>
-<%= link_to "Go back", home_path %></br>
+<%= link_to "The Reel", movies_path %></br>
 <%= link_to "Log out", log_out_path, method: :delete%>

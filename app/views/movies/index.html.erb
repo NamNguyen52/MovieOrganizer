@@ -1,16 +1,19 @@
-<h1>All User Movies</h1>
+<h1>The Reel</h1>
+<p>What users are adding to their lists</p></br>
+<%= link_to "Go to my list", :show_user %>
 
 <% @movies.each do |movie| %>
-
-<ul>
 	
-	<li><%= movie.title %></li>
-	<li><%= movie.director %></li>
-	<li><%= movie.release_date %></li>
-
-</ul>
-
+	<h4> Title: <%= movie.title %> </h4>
+	<p>Director: <%= movie.director %></p>
+	<p>Release date: <%= movie.release_date %></p>
+	<p>Trailer: </p></br>
+	<% if movie.trailer != nil %>
+	<div class="embed-responsive embed-responsive-4by3">
+	<p><%= embed(movie.trailer) %></p>
+	</div></br></br>
+	<% end %>
 
 <% end %>
 
-<%= link_to "Go back", :show_user %>
+<%= link_to "Go to my list", :show_user %>

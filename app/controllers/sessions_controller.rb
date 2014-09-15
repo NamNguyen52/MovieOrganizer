@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
 		if user && user.authenticate(params[:session][:password])
 			log_in(user)
-			redirect_to show_user_path
+			redirect_to movies_path
 		else
 			flash[:error] ||= "Pleas try again!"
 			render 'new'
