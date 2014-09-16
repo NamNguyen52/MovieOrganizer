@@ -8,17 +8,33 @@ class MoviesController < ApplicationController
   	@movie = Movie.new
   end
 
-  # def watched
-  #   update_entry = current_user.usermovies(@movie)
-  #   update_entry.watch = true
-  #   update_entry.save
+  # def search
+  #   @search = 
   # end
 
-  # def destroy
-  #   @movie = Movie.find(params[:movie_id])
-  #   @movie.destroy
-  #   redirect_to show_user_path
-  # end
+  def edit
+    @movie = Movie.find(params[:movie_id])
+  end
+
+  def update
+    @movie = Movie.find(params[:movie_id])
+
+    if @movie.update_attributes(params.require(:movie).permit(:title, :director, :release_date, :trailer))
+      redirect_to show_user_path
+    else
+      render 'edit'
+    end
+  end
+
+  def watched
+  end
+
+  def destroy
+    @movie = Movie.find(params[:movie_id])
+    @movie.destroy
+    Usermovie.where(movie_id: params[:movie_id]).destroy
+    redirect_to show_user_path
+  end
 
   def create
     @movie = Movie.create(params.require(:movie).permit(:title, :director, :release_date, :trailer))

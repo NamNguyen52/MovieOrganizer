@@ -1,0 +1,14 @@
+<h1>Edit this movie</h1>
+
+<%= form_for @movie do |entry| %>
+
+<%= entry.label :title %> <%= entry.text_field :title %>
+<%= entry.label :director %> <%= entry.text_field :director %>
+<%= entry.label :release_date %> <%= entry.text_field :release_date %>
+<%= entry.label :trailer %> <%= entry.text_field :trailer %>
+
+<%= entry.submit "Submit update!" %>
+
+<% end %>
+
+<%= link_to "Go back", show_user_path %>

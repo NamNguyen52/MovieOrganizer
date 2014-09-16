@@ -5,7 +5,10 @@ Movieorganizer::Application.routes.draw do
   post 'movies/' => 'movies#create'
   get 'movies/' => 'movies#index'
 
-  delete 'movies/:id' => 'movies#destroy'
+  delete 'movies/:movie_id' => 'movies#destroy',as: :movie
+
+  get 'movies/:movie_id/edit' => 'movies#edit', as: :edit_movie
+  patch 'movies/:move_id' => 'movies#update'
 
   #search with YouTube API to add new movie
   get '/current_user/search' => 'movies#search', as: :search_movie
@@ -24,6 +27,6 @@ Movieorganizer::Application.routes.draw do
   post '/log_in' => 'sessions#create'
   delete '/log_out' => 'sessions#destroy', as: :log_out
   get '/log_in/current_user' => 'sessions#show', as: :show_user
-  patch '/log_in/current_user' => 'movies#watched', as: :watched_movie
+  get '/current_user/watched' => 'movies#watched', as: :watched_movie
 
 end

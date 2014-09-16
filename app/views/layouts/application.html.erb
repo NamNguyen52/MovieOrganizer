@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<nav>
+	<% if logged_in? %>
+	<%= render partial: "layouts/menu" %>
+	<% end %>
+</nav>
+
 <%= yield %>
 
 </body>
