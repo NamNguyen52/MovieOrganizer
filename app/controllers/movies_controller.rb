@@ -27,6 +27,8 @@ class MoviesController < ApplicationController
   end
 
   def watched
+    Usermovie.where(movie_id: params[:movie_id]).update(watch: true)
+    redirect_to show_watched_path
   end
 
   def destroy
@@ -41,6 +43,7 @@ class MoviesController < ApplicationController
     new_entry = Usermovie.new
     new_entry.user = current_user
     new_entry.movie = @movie
+    new_entry.watch = false
     new_entry.save
     if @movie.save
       redirect_to show_user_path

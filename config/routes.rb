@@ -5,7 +5,7 @@ Movieorganizer::Application.routes.draw do
   post 'movies/' => 'movies#create'
   get 'movies/' => 'movies#index'
 
-  delete 'movies/:movie_id' => 'movies#destroy',as: :movie
+  delete 'movies/:movie_id' => 'movies#destroy', as: :movie
 
   get 'movies/:movie_id/edit' => 'movies#edit', as: :edit_movie
   patch 'movies/:move_id' => 'movies#update'
@@ -27,6 +27,7 @@ Movieorganizer::Application.routes.draw do
   post '/log_in' => 'sessions#create'
   delete '/log_out' => 'sessions#destroy', as: :log_out
   get '/log_in/current_user' => 'sessions#show', as: :show_user
-  get '/current_user/watched' => 'movies#watched', as: :watched_movie
+  get '/current_user/watched_list' => 'sessions#watched_show', as: :show_watched
+  patch '/current_user/watched/:movie_id' => 'movies#watched', as: :watched_movie
 
 end

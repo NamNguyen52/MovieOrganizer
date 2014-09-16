@@ -41,11 +41,13 @@ movies = Movie.create([
 usermovies = Usermovie.create([
   {
     user: users[0],
-    movie: movies[0]
+    movie: movies[0],
+    watch: false
   },
   {
     user: users[1],
-    movie: movies[1]
+    movie: movies[1],
+    watch: false
   }
 ]);
 

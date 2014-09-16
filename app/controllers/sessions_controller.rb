@@ -8,6 +8,10 @@ class SessionsController < ApplicationController
 		@current_user_list = current_user.usermovies
 	end	
 
+	def watched_show
+		@current_user_list = current_user.usermovies
+	end
+
 	def create
 		flash.clear
 
