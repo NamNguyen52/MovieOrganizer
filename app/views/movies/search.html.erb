@@ -4,7 +4,7 @@
 
 <%= search.label :terms %> <%= search.text_field :terms %>
 
-<%= search.submit "Search!", method: :post %>
+<%= search.submit "Search!" :method => "get" %>
 
 <% end %>
 

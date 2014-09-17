@@ -11,8 +11,8 @@ Movieorganizer::Application.routes.draw do
   patch 'movies/:movie_id' => 'movies#update', as: :update
 
   #search with YouTube API to add new movie
-  get 'search' => 'movies#search', as: :search_movie
-  post 'search/post' => 'movies#do_search', as: :search
+  get 'search/' => 'movies#do_search', as: :search
+  post 'search/' => 'movies#do_search'
 
   # This is more or less the bare min of the first screen of the app.
   # This shows the Login, and create new account.

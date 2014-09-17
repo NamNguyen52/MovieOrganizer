@@ -1,6 +1,4 @@
-require 'rubygems'
-require 'google/api_client'
-require 'trollop'
+require 'youtube_it'
 
 class Movie
   include Mongoid::Document
