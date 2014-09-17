@@ -1,5 +1,13 @@
-<h1>Search for a movie trailer</h1>
+<h1>Search for a trailer</h1>
 
+<%= form_for(:search, url: search_path) do |search| %>
 
+<%= search.label :terms %> <%= search.text_field :terms %>
+
+<%= search.submit "Search!", method: :post %>
+
+<% end %>
 
 <%= link_to "Go back", :show_user %>
+
+  

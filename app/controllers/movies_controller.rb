@@ -8,9 +8,12 @@ class MoviesController < ApplicationController
   	@movie = Movie.new
   end
 
-  # def search
-  #   @search = 
-  # end
+  def search
+  end
+
+  def do_search
+    search_terms = params[:search][:terms]
+  end
 
   def edit
     @movie = Movie.find(params[:movie_id])

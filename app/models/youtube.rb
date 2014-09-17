@@ -1,9 +1,9 @@
-module MoviesHelper
+# require 'rubygems'
+# require 'google/api_client'
+# require 'trollop'
 
-def embed(youtube_url)
-  youtube_split = youtube_url.split('=')
-  youtube_id = youtube_split.last
-  content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{youtube_id}")
+class Youtube
+  include Mongoid::Document
 end
 
 # def youtube_search(search_terms)
@@ -34,5 +34,3 @@ end
 # 	      videos.push("#{search_result.id.videoId}")
 # 	end
 # end
-
-end
