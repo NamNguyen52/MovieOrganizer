@@ -14,8 +14,8 @@ class MoviesController < ApplicationController
   def do_search
     search_terms =  params[:search][:terms] 
     client = YouTubeIt::Client.new(:dev_key => "AI39si7vE4lh5EcW-n_4g1r4D9sYeCJKMqV7AvKHfsaKkWIKR8ACKVY0qiCsV226DufNNpRP2jdxbBqPjeJ33GNM6_8rf50bOw")
-    @results = client.videos_by(:query => search_terms, :page => 2, :per_page => 15)
-    render search_path
+    @results = client.videos_by(:query => search_terms + "trailer", :per_page => 5)
+    render "search"
   end
 
   def edit

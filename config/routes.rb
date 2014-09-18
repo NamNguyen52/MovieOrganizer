@@ -8,10 +8,10 @@ Movieorganizer::Application.routes.draw do
   delete 'movies/:movie_id' => 'movies#destroy', as: :movie
 
   get 'movies/:movie_id/edit' => 'movies#edit', as: :edit_movie
-  patch 'movies/:movie_id' => 'movies#update', as: :update
+  patch 'movies/:movie_id' => 'movies#update'
 
   #search with YouTube API to add new movie
-  get 'search/' => 'movies#do_search', as: :search
+  get 'search/' => 'movies#search', as: :search
   post 'search/' => 'movies#do_search'
 
   # This is more or less the bare min of the first screen of the app.

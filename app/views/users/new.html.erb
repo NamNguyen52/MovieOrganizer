@@ -1,12 +1,19 @@
 <h1>Make a new account</h1>
 
+<% @user.errors.messages.each do |k,v| %>
+
+	<%= k %> : <%= v.join(",") %>
+
+<% end %>
+
 <%= form_for @user do |user| %>
 
-	<%= user.label :name %></br> <%= user.text_field :name %></br></br>
+	<%= user.label :name %></br> 
+	<%= user.text_field :name %></br></br>
 	<%= user.label :username %></br> <%= user.text_field :username %></br></br>
-	<%= user.label :password %></br> <%= user.password_field :password %></br></br>
+	Password</br> <%= user.password_field :password_digest %></br></br>
 
-	<%= user.submit "Creat account!" %>
+	<%= user.submit "Create account!" %>
 
 <% end %>
 

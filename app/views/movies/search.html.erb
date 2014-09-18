@@ -4,10 +4,16 @@
 
 <%= search.label :terms %> <%= search.text_field :terms %>
 
-<%= search.submit "Search!" :method => "get" %>
+<%= search.submit "Search!" %>
 
 <% end %>
 
-<%= link_to "Go back", :show_user %>
+<%= link_to "Go back", :show_user %></br></br>
 
-  
+
+<% @results.videos.each do |r| %>
+
+<%= search_embed(r.unique_id) %>
+
+<% end %>
+

@@ -1,15 +1,16 @@
+<div class="jumbotron">
 <h1>Watched It!</h1>
+</div>
 
 <% @current_user_list.each do |entry| %>
 <% if entry.watch? %>
 <h4><%= entry.movie.title %></h4>
 Director: <%= entry.movie.director %></br>
 Release Date: <%= entry.movie.release_date %></br>
-Trailer:</br> 
+<%= link_to "Delete", entry.movie, method: :delete %></br>
 <div class="embed-responsive embed-responsive-4by3">
 <%= embed(entry.movie.trailer) %>
 </div>
-<%= link_to "Delete", entry.movie, method: :delete %></br>
 <% end %>
 <% end %>
 

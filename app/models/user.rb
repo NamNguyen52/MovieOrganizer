@@ -8,6 +8,9 @@ class User
   
   has_many :usermovies  
 
+  validates :username, presence: true, uniqueness: true
+  validates :name, presence: true
+
 attr_reader :password
 
 def password=(new_password)

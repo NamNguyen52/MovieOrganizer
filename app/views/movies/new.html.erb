@@ -1,4 +1,6 @@
+<div class="jumbotron">
 <h1>Add a new movie</h1>
+</div>
 
 <%= form_for @movie do |movie| %>
 
@@ -16,7 +18,7 @@
 </div></br></br>
 
 <%= movie.label :submit %> <%= movie.submit "Add movie!" %>
-
+</form>
 <% end %>
 
 <%= link_to "Go back", show_user_path %>
