@@ -1,20 +1,24 @@
-<div class="jumbotron">
+<div class="reel-header">
 <h1>The Reel</h1>
-<p>What users are adding to their lists</p>
-</div></br>
+<p>What users are adding</p>
+</div>
+
 
 <% @movies.each do |movie| %>
-	
+<div class="panel panel-default">
+  <div class="panel-body">	
 	<h4> Title: <%= movie.title %> </h4>
-	<p>Director: <%= movie.director %></p>
-	<p>Release date: <%= movie.release_date %></p>
-	<p>Trailer: </p></br>
+	Director: <%= movie.director %></br>
+	Release date: <%= movie.release_date %></br>
+  </div>
+  <div class="panel-footer">	
 	<% if movie.trailer != nil %>
 	<div class="embed-responsive embed-responsive-4by3">
-	<p><%= embed(movie.trailer) %></p>
+	<%= embed(movie.trailer) %>
 	</div></br></br>
 	<% end %>
-
+  </div>	
+</div>
 <% end %>
 
 <%= link_to "Go to my list", :show_user %>

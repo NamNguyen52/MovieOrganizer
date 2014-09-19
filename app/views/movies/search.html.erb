@@ -10,10 +10,15 @@
 
 <%= link_to "Go back", :show_user %></br></br>
 
-
+<% if @results != nil %>
 <% @results.videos.each do |r| %>
 
+<button class="btn btn-primary btn-lg">
+Add this movie
+</button></br>
+<div class="embed-responsive embed-responsive-16by9">
 <%= search_embed(r.unique_id) %>
+</div>
 
 <% end %>
-
+<% end %>

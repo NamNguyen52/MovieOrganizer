@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 	def new
 		flash.clear
+		@body_class = "home-image"
 	end
 
 	def show

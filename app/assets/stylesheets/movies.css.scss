@@ -1,3 +1,60 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+    font-family: 'nautilus_pompiliusregular';
+    src: asset-url('nautilus/nautilus-webfont.eot');
+    src: asset-url('nautilus/nautilus-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('nautilus/nautilus-webfont.woff2') format('woff2'),
+         asset-url('nautilus/nautilus-webfont.woff') format('woff'),
+         asset-url('nautilus/nautilus-webfont.ttf') format('truetype'),
+         asset-url('nautilus/nautilus-webfont.svg#nautilus_pompiliusregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.home-image {
+	background-image: url('http://timelifeblog.files.wordpress.com/2013/06/eyerman_movie_1.jpg');
+}
+
+.my-home-nav-color {
+	background: black;	
+}
+
+.home-title {
+	color: white;
+	font-size: 225px;
+	font-family: nautilus_pompiliusregular;
+	margin-left: 50px;
+	margin-top: 290px;
+}
+
+.my-nav-bar {
+	border: none;
+	border-radius: 0px;
+}
+
+.log-in-fields {
+	border-radius: 5px;
+	background: transparent;
+}
+
+.reel-header {
+	margin-top: 100px;
+	height: 150px;
+	width: 225px;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: nautilus_pompiliusregular;
+}
+
+.user-list-header {
+	font-family: nautilus_pompiliusregular;
+	margin-top: 100px;
+	height: 100px;
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}

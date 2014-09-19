@@ -1,17 +1,37 @@
-<div class="jumbotron">
+<div class="user-list-header">
 <h1><%= current_user.username %>'s Movie List</h1>
-</div></br>
+</div>
 
 <% @current_user_list.each do |entry| %>
 <% unless entry.watch? %>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+<div class="panel panel-default">
+  <div class="panel-body">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">	
 <h4><%= entry.movie.title %></h4>
+   </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
 <strong>Director:</strong> <%= entry.movie.director %></br>
 <strong>Release Date:</strong></br> <%= entry.movie.release_date %></br>
 <%= link_to "Watched it!", watched_movie_path(entry.movie), method: :patch %> --
 <%= link_to "Delete", entry.movie, method: :delete %> --
-<%= link_to "Edit", edit_movie_path(entry.movie) %></br>
+<%= link_to "Edit", edit_movie_path(entry.movie) %>
+</div>
+<div class="panel-footer">
 <div class="embed-responsive embed-responsive-16by9">
 <%= embed(entry.movie.trailer) %>
+</div>
+ </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 <% end %>
 <% end %>
