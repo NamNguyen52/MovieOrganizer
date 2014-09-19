@@ -16,7 +16,8 @@
 }
 
 .home-image {
-	background-image: url('http://timelifeblog.files.wordpress.com/2013/06/eyerman_movie_1.jpg');
+	background-image: url('http://lefthandhorror.files.wordpress.com/2013/06/massive-b-horror-collage-wallpaper-horror-movies-29491579-2560-1600.jpg');
+	background-size: cover;
 }
 
 .my-home-nav-color {
@@ -29,6 +30,7 @@
 	font-family: nautilus_pompiliusregular;
 	margin-left: 50px;
 	margin-top: 290px;
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
 }
 
 .my-nav-bar {
@@ -55,6 +57,38 @@
 	margin-top: 100px;
 	height: 100px;
 	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.watched-header {
+	font-family: nautilus_pompiliusregular;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 50px;
+	width: 200px;
+}
+
+.search-header {
+	font-family: nautilus_pompiliusregular;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 50px;
+	width: 300px;
+}
+
+.search-area {
+	height: 80px;
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.search-results {
+	width: 1200px;
+	height: 800px;
 	margin-right: auto;
 	margin-left: auto;
 }

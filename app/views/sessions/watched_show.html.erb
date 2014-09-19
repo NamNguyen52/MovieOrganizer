@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="watched-header">
 <h1>Watched It!</h1>
 </div>
 
@@ -8,24 +8,22 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href='#<%= entry.movie.title %>'>
-		  <h4><%= entry.movie.title %></h4>
-   		</a>
+        <a data-toggle="collapse" data-parent="#accordion" href='#<%= entry.movie.title.parameterize %>'>
+		      <h4><%= entry.movie.title %></h4>
+   		  </a>
       </h4>
     </div>
-  <div id='<%= entry.movie.title %>' class="panel-collapse collapse">
-<div class="panel-body">
-Director: <%= entry.movie.director %></br>
-Release Date: <%= entry.movie.release_date %></br>
-<%= link_to "Delete", entry.movie, method: :delete %></br>
-<div class="embed-responsive embed-responsive-4by3">
-<%= embed(entry.movie.trailer) %>
-</div>
-    </div>
+    <div id='<%= entry.movie.title.parameterize %>' class="panel-collapse collapse">
+      <div class="panel-body">
+        Director: <%= entry.movie.director %></br>
+        Release Date: <%= entry.movie.release_date %></br>
+        <%= link_to "Delete", entry.movie, method: :delete %></br>
+        <div class="embed-responsive embed-responsive-4by3">
+          <%= embed(entry.movie.trailer) %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <% end %>
 <% end %>
-
-<%= link_to "Go Back", show_user_path %>

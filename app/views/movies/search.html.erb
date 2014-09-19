@@ -1,23 +1,24 @@
+<div class="search-header">
 <h1>Search for a trailer</h1>
+</div>
 
+<div class="search-area">
 <%= form_for(:search, url: search_path) do |search| %>
 
-<%= search.label :terms %> <%= search.text_field :terms %>
+<%= search.text_field :terms %>
 
 <%= search.submit "Search!" %>
 
 <% end %>
-
-<%= link_to "Go back", :show_user %></br></br>
+</div>
 
 <% if @results != nil %>
 <% @results.videos.each do |r| %>
 
-<button class="btn btn-primary btn-lg">
-Add this movie
-</button></br>
+<div class="search-results">
 <div class="embed-responsive embed-responsive-16by9">
 <%= search_embed(r.unique_id) %>
+</div>
 </div>
 
 <% end %>
