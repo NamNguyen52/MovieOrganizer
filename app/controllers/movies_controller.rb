@@ -9,9 +9,11 @@ class MoviesController < ApplicationController
   end
 
   def search
+    @movie = Movie.new
   end
 
   def do_search
+    @movie = Movie.new
     search_terms =  params[:search][:terms] 
     client = YouTubeIt::Client.new(:dev_key => "AI39si7vE4lh5EcW-n_4g1r4D9sYeCJKMqV7AvKHfsaKkWIKR8ACKVY0qiCsV226DufNNpRP2jdxbBqPjeJ33GNM6_8rf50bOw")
     @results = client.videos_by(:query => search_terms + "trailer", :per_page => 5)
@@ -34,7 +36,7 @@ class MoviesController < ApplicationController
 
   def watched
     Usermovie.where(movie_id: params[:movie_id]).update(watch: true)
-    redirect_to show_watched_path
+    redirect_to show_user_path
   end
 
   def destroy

@@ -24,7 +24,7 @@ Movieorganizer::Application.routes.draw do
   post 'users/' => 'users#create'
 
   # Wireframe of user login
-  get '/log_in' => 'sessions#new', as: :log_in
+  root 'sessions#new'
   post '/log_in' => 'sessions#create'
   delete '/log_out' => 'sessions#destroy', as: :log_out
   get '/log_in/current_user' => 'sessions#show', as: :show_user
