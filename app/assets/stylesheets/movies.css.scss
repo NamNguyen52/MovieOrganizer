@@ -26,11 +26,10 @@
 
 .home-title {
 	color: white;
-	font-size: 225px;
+	font-size: 200px;
 	font-family: nautilus_pompiliusregular;
-	margin-left: 50px;
-	margin-top: 290px;
 	text-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+	padding-top: 20px;
 }
 
 .my-nav-bar {
@@ -45,7 +44,7 @@
 
 .reel-header {
 	margin-top: 100px;
-	height: 150px;
+	height: 100px;
 	width: 225px;
 	margin-right: auto;
 	margin-left: auto;
@@ -89,6 +88,30 @@
 .search-results {
 	width: 1200px;
 	height: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.home-title-container {
+	height: 300px;
+	width: 1350px;
+	background: rgba(0,0,0,0.6);
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 200px;
+}
+
+.home-form-container {
+	height: 50px;
+	width: 540px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+}
+
+.home-title-header-container {
+	height: 200px;
+	width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
 }
