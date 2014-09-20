@@ -26,13 +26,11 @@ users = User.create([
 movies = Movie.create([
   {
   	title: "The Holy Mountain",
-  	director: "Alejandro Jorodowsky",
-    release_date: Date.new(1975,07,11)
+  	director: "Alejandro Jorodowsky"
   },
   {
   	title: "Amer",
-  	director: "Helene Cattet, Bruno Forzani",
-    release_date: Date.new(2010,03,03)
+  	director: "Helene Cattet, Bruno Forzani"
   }
 
 ]);
