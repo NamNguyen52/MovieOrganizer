@@ -2,19 +2,21 @@
 
 <%= flash[:error] %>
 
-<div class="home-title-container">
-
-<div class="home-title-header-container">
-<h1 class='home-title'>Trailer Tracker</h1>
-</div>
-
-<div class="home-form-container">
-<%= form_for(:session, url: log_in_path) do |login| %>
-  <%= login.text_field :username, placeholder: "Enter Username" %>
-  <%= login.password_field :password, placeholder: "Enter Password" %>
-<%= login.submit "Submit" %>
-<%= link_to "Make new account", :new_user %>
-<% end %>
-</div>
-
+<div class="overlay-container">
+	<div class="home-title-container">
+		<div class="home-title-header-container">
+			<h1 class='home-title'>Trailer Tracker</h1>
+		</div>
+		<div class="home-form-container">
+			<%= form_for(:session, url: log_in_path) do |login| %>
+			  <%= login.text_field :username, placeholder: "Enter Username" %>
+			  <%= login.password_field :password, placeholder: "Enter Password" %>
+			<%= login.submit "Submit" %>
+			<%= link_to "Make new account", :new_user %>
+			<% end %>
+		</div>
+	</div>
+	<div class="video-container">
+		<%= video_tag("161756047.webm",:height=> '100%', :width => '100%', :autoplay => true, :loop => true, :muted => true)%>
+	</div>
 </div>

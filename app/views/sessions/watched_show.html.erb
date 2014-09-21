@@ -19,7 +19,7 @@
         Release Date: <%= entry.movie.release_date %></br>
         <%= link_to "Delete", entry.movie, method: :delete %></br>
         <div class="embed-responsive embed-responsive-4by3">
-          <%= embed(entry.movie.trailer) %>
+          <%= search_embed(entry.movie.trailer) %>
         </div>
       </div>
     </div>

@@ -12,52 +12,50 @@
 <% end %>
 </div>
 
-
-
 <% if @results != nil %>
-<% @results.videos.each_with_index do |r| %>
+<% @results.videos.each do |r| %>
 
 <div class="search-results">
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add</button></br>
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href='#<%= r.unique_id.parameterize %>'>
+          <h4 class="glyphicon glyphicon-plus"> Add trailer</h4>
+		</a>
+      </h4>
+    </div>
+    <div id='<%= r.unique_id.parameterize %>' class="panel-collapse collapse">
+      <div class="panel-body">
+      	<form class="form-inline" role="form">
+	    <%= form_for @movie  do |movie| %>
+	
+		<div class="form-group">
+		<%= movie.text_field :title, placeholder: "Title" %>
+		</div>
+		<div class="form-group">
+		<%= movie.text_field :director, placeholder: "Director" %>
+		</div>
+		<div class="form-group">
+		<%= movie.text_field :release_date, placeholder: "Release Date" %>
+		</div>
+		<div class="form-group">
+		<%= movie.hidden_field :trailer, :value => r.unique_id %>
+		</div>
+		<%= movie.submit "Add movie!" %>
+		<% end %>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="embed-responsive embed-responsive-16by9">
 <%= search_embed(r.unique_id) %>
 </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Movie Details</h4>
-      </div>
-      <div class="modal-body">
-      	<%= form_for @movie  do |movie| %>
-
-		<div class="form-group">
-		<%= movie.label :title %> </br> <%= movie.text_field :title %>
-		</div>
-		<div class="form-group">
-		<%= movie.label :director %> </br> <%= movie.text_field :director %>
-		</div>
-		<div class="form-group">
-		<%= movie.label :release_date %> </br> <%= movie.text_field :release_date %>
-		</div>
-		<div class="form-group">
-		<%= movie.label :trailer %> </br> <%= movie.text_field :trailer %>
-		</div></br></br>
-
-		<%= movie.submit "Add movie!" %>
-		</form>
-		<% end %>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <% end %>
 <% end %>
 

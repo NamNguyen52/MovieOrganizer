@@ -99,6 +99,7 @@
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 200px;
+	z-index: 10;
 }
 
 .home-form-container {
@@ -114,4 +115,21 @@
 	width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.video-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+}
+
+.overlay-container {
+	height: 100%;
+	width: 100%;
+	position: relative;
 }

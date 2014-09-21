@@ -22,7 +22,7 @@
 		<%= link_to "Delete", entry.movie, method: :delete %> --
 		<%= link_to "Edit", edit_movie_path(entry.movie) %>
 		<div class="embed-responsive embed-responsive-16by9">
-			<%= embed(entry.movie.trailer) %>
+			<%= search_embed(entry.movie.trailer) %>
        </div>
       </div>
     </div>
