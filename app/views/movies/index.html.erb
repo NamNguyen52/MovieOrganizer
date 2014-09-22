@@ -10,6 +10,9 @@
 	<h4> Title: <%= movie.title %> </h4>
 	Director: <%= movie.director %></br>
 	Release date: <%= movie.release_date %></br>
+	<% if movie.comment != nil %>
+	Comment: <%= movie.comment %>
+	<% end %>
   </div>
   <div class="panel-footer">	
 	<% if movie.trailer != nil %>

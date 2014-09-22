@@ -11,6 +11,8 @@ gem 'google-api-client', '~> 0.7.1'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 
+gem 'imdb', '~> 0.8'
+
 gem 'rails_12factor', group: :production
 
 group :production do

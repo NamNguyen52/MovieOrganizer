@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    @movies = Movie.order('created_at DESC').all
   end
 
   def new
@@ -17,6 +17,14 @@ class MoviesController < ApplicationController
     search_terms =  params[:search][:terms] 
     client = YouTubeIt::Client.new(:dev_key => "AI39si7vE4lh5EcW-n_4g1r4D9sYeCJKMqV7AvKHfsaKkWIKR8ACKVY0qiCsV226DufNNpRP2jdxbBqPjeJ33GNM6_8rf50bOw")
     @results = client.videos_by(:query => search_terms + "trailer", :per_page => 5)
+
+    i = Imdb::Search.new(search_terms)
+    d = i.movies.first.id
+    dir = Imdb::Movie.new(d)
+    @director = dir.director
+    @release_date = dir.release_date
+    @title = dir.title
+
     render "search"
   end
 
@@ -47,7 +55,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.create(params.require(:movie).permit(:title, :director, :release_date, :trailer))
+    @movie = Movie.create(params.require(:movie).permit(:title, :director, :release_date, :trailer, :comment))
     new_entry = Usermovie.new
     new_entry.user = current_user
     new_entry.movie = @movie

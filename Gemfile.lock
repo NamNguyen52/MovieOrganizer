@@ -75,6 +75,8 @@ GEM
       uuidtools (>= 2.1.0)
     hike (1.2.3)
     i18n (0.6.11)
+    imdb (0.8.1)
+      nokogiri (>= 1.6.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -195,6 +197,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   google-api-client (~> 0.7.1)
+  imdb (~> 0.8)
   jbuilder (~> 1.2)
   jquery-rails
   mongoid!

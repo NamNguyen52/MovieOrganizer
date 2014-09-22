@@ -33,17 +33,31 @@
 		<div class="container">
 		<div class="col-md-3">
 		<div class="form-group">
-		<%= movie.label :title %> </br> <%= movie.text_field :title, :class => "form-control" %>
+		<%= movie.label :title %> </br> 
+		<% if @title != nil %>
+		<%= movie.text_field :title, :value => @title, :class => "form-control" %>
+		<% end %>
 		</div>
 		</div>
 		<div class="col-md-3">
 		<div class="form-group">
-		<%= movie.label :director %> </br> <%= movie.text_field :director, :class => "form-control" %>
+		<%= movie.label :director %> </br> 
+		<% if @director != nil %>
+		<%= movie.text_field :director, :value => @director, :class => "form-control" %>
+		<% end %>
 		</div>
 		</div>
 		<div class="col-md-3">
 		<div class="form-group">
-		<%= movie.label :release_date %> </br> <%= movie.text_field :release_date, :class => "form-control" %>
+		<%= movie.label :release_date %> </br> 
+		<% if @release_date != nil%>
+		<%= movie.text_field :release_date, :value => @release_date, :class => "form-control" %>
+		<% end %>
+		</div>
+		</div>
+		<div class="col-md-3">
+		<div class="form-group">
+		<%= movie.label :comment %> </br> <%= movie.text_field :comment, :class => "form-control" %>
 		</div>
 		</div>
 		<div class="form-group">
@@ -51,9 +65,7 @@
 		</div>
 		</div>
 
-		<div class="col-md-3">
 		<%= movie.submit "Add movie!" %>
-		</div>
 		<% end %>
       </div>
     </div>

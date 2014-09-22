@@ -1,14 +1,21 @@
+<div class="edit-header">
 <h1>Edit this movie</h1>
+</div>
 
 <%= form_for @movie do |entry| %>
 
-<%= entry.label :title %> <%= entry.text_field :title %>
-<%= entry.label :director %> <%= entry.text_field :director %>
-<%= entry.label :release_date %> <%= entry.text_field :release_date %>
-<%= entry.label :trailer %> <%= entry.text_field :trailer %>
-
-<%= entry.submit "Submit update!" %>
+<div class="edit-container">
+<div class="form-group">
+<%= entry.label :title %> </br> <%= entry.text_field :title, :class => "form-control" %>
+</div>
+<div class="form-group">
+<%= entry.label :director %> </br> <%= entry.text_field :director, :class => "form-control" %>
+</div>
+<div class="form-group">
+<%= entry.label :release_date %> </br> <%= entry.text_field :release_date, :class => "form-control" %>
+</div>
+<%= entry.submit "Submit update!" %></br>
+<%= link_to "Go back", show_user_path %>
+</div>
 
 <% end %>
-
-<%= link_to "Go back", show_user_path %>
