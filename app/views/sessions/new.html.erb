@@ -3,6 +3,7 @@
 <%= flash[:error] %>
 
 <div class="overlay-container">
+
   <div class="home-title-container">
 	  <div class="home-title-header-container">
 		  <h1 class='home-title'>Trailer Tracker</h1>
@@ -19,7 +20,9 @@
 		<% end %>
 	  </div>
   </div>
+
   <div class="video-container">
 	  <%= video_tag("slowwweb.webm",:height=> '100%', :width => '100%', :autoplay => true, :loop => true, :muted => true)%>
   </div>
+
 </div>
